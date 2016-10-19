@@ -1,0 +1,28 @@
+{
+    "name": "announce",
+    "version": "0.1.0",
+    "homepage": "https://github.com/thatguyhughesy/announce",
+    "authors": [
+        "Conor Hughes <hello@conorhughes.me>"
+    ],
+    "maintainers": [
+        "Conor Hughes <hello@conorhughes.me>"
+    ],
+    "description": "Growl-inspired alerts and messages.",
+    "keywords": [
+        "growl",
+        "alert",
+        "message",
+        "javascript",
+        "css"
+    ],
+    "license": "MIT",
+    "main": "dist/js/announce.js",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
