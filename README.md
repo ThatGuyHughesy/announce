@@ -19,11 +19,13 @@ $ bower install
 
 ```javascript
 let announce = new Announce({
+    position: 'bottom-right',
     timeout: 5000
 });
 
 announce.post({
-  text: 'This is an announcement!'
+  text: 'This is an announcement!',
+  type: 'notice'
 });
 
 ```
@@ -35,7 +37,7 @@ announce.post({
 
 ## Contributing
 
-Contributions of any kind is encouraged. If you would like to contribute in any way, please review the [guidelines for contributing](CONTRIBUTING.md).
+Contributions of any kind are encouraged. If you would like to contribute in any way, please check out the [guidelines for contributing](CONTRIBUTING.md).
 
 
 ## License

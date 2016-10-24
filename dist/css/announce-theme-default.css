@@ -1,0 +1,23 @@
+.default li {
+  color: #fff; }
+
+.default .close {
+  color: #fff; }
+
+.default .notice,
+.default .success,
+.default .warning,
+.default .error {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2); }
+
+.default .notice {
+  background-color: #15a4fa; }
+
+.default .success {
+  background-color: #28B087; }
+
+.default .warning {
+  background-color: #E98E56; }
+
+.default .error {
+  background-color: #DE5656; }

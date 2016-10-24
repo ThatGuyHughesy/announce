@@ -10,20 +10,19 @@
     },
     "license": "MIT",
     "main": "dist/js/announce.js",
-    "spm": {
-        "main": "announce.js"
+    "dependencies": {
+        "jquery": "^1.7.0"
     },
     "devDependencies": {
         "del": "^1.2.0",
         "gulp": "^3.9.0",
-        "gulp-autoprefixer": "^2.3.1",
         "gulp-babel": "^5.1.0",
         "gulp-bump": "^0.3.1",
-        "gulp-coffee": "^2.3.1",
         "gulp-header": "^1.2.2",
-        "gulp-rename": "^1.2.2",
         "gulp-sass": "^2.0.1",
-        "gulp-uglify": "^1.2.0",
+        "gulp-minify": "^0.0.14",
+        "gulp-clean-css": "^2.0.6",
+        "gulp-rename": "^1.2.2",
         "gulp-wrap-umd": "^0.2.1"
     }
 }

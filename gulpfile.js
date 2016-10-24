@@ -2,11 +2,10 @@ var del = require('del');
 var gulp = require('gulp');
 var babel = require('gulp-babel');
 var bump = require('gulp-bump');
-var coffee = require('gulp-coffee');
 var header = require('gulp-header');
-var prefixer = require('gulp-autoprefixer');
+var minify = require('gulp-minify');
+var clean = require('gulp-clean-css');
 var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var umd = require('gulp-wrap-umd');
 
@@ -27,10 +26,9 @@ gulp.task('js', function() {
         .pipe(babel())
         .pipe(umd(umdOptions))
         .pipe(header(banner))
-
-    .pipe(gulp.dest(distDir + '/js'))
-
-    .pipe(rename({ suffix: '.min' }))
+        .pipe(minify({
+            ext: { min: '.min.js' }
+        }))
         .pipe(gulp.dest(distDir + '/js'));
 });
 
@@ -39,14 +37,15 @@ gulp.task('css', function() {
         .pipe(sass({
             includePaths: ['./bower_components']
         }))
-        .pipe(prefixer())
+        .pipe(gulp.dest(distDir + '/css'))
+        .pipe(clean())
+        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(distDir + '/css'));
 });
 
 gulp.task('css:docs', function() {
     gulp.src('./docs/welcome/scss/*.scss')
         .pipe(sass())
-        .pipe(prefixer())
         .pipe(gulp.dest('./docs/welcome/css'));
 });
 
