@@ -1,0 +1,32 @@
+$white: #fff;
+$notice: #15a4fa;
+$success: #28B087;
+$warning: #E98E56;
+$error: #DE5656;
+
+.default {
+    li {
+        color: $white;
+    }
+    .close {
+        color: $white;
+    }
+    .notice,
+    .success,
+    .warning,
+    .error {
+        border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    }
+    .notice {
+        background-color: $notice;
+    }
+    .success {
+        background-color: $success;
+    }
+    .warning {
+        background-color: $warning;
+    }
+    .error {
+        background-color: $error;
+    }
+}
