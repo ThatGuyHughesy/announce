@@ -4,29 +4,29 @@ $success: #28B087;
 $warning: #E98E56;
 $error: #DE5656;
 
-.default {
+.announce-theme-default {
     li {
         color: $white;
     }
     .close {
         color: $white;
     }
-    .notice,
-    .success,
-    .warning,
-    .error {
+    .announce-notice,
+    .announce-success,
+    .announce-warning,
+    .announce-error {
         border-bottom: 3px solid rgba(0, 0, 0, 0.2);
     }
-    .notice {
+    .announce-notice {
         background-color: $notice;
     }
-    .success {
+    .announce-success {
         background-color: $success;
     }
-    .warning {
+    .announce-warning {
         background-color: $warning;
     }
-    .error {
+    .announce-error {
         background-color: $error;
     }
 }
