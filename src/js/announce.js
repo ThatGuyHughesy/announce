@@ -1,33 +1,42 @@
 function Announce(settings_global) {
-    var defaults = {
+    var globalDefaults = {
         position: 'bottom-right',
-        theme: 'default'
+        theme: 'default',
+        timeout: false,
+        timeoutDelay: 5000
     };
 
-    var settings = $.extend({}, defaults, settings_global);
+    var settings = $.extend({}, globalDefaults, settings_global);
 
-    this.init = function() {
+    this.init = function () {
         $('body').append($('<ul/>', {
             id: 'announce',
-            class: 'announce ' + settings.theme + ' ' + settings.position
+            class: 'announce ' + 'announce-theme-' + settings.theme + ' ' + settings.position
         }));
-        $(document).trigger('init');
-    }
+    };
 
-    this.post = function(settings_message) {
-        var defaults = {
+    this.post = function (settings_message) {
+        var postDefaults = {
             type: 'notice'
         };
 
-        var settings = $.extend({}, defaults, settings_message);
+        var settings = $.extend(globalDefaults, postDefaults, settings_message);
 
-        $(document).on('init', function() {
-            $('#announce').append($('<li/>', {
-                class: settings.type,
+        $(function () {
+            var announcement = $('<li/>', {
+                class: 'announce-' + settings.type,
                 text: settings.message
-            }));
+            });
+
+            $('#announce').append(announcement);
+
+            if (settings.timeout) {
+                setTimeout(function () {
+                    announcement.remove();
+                }, settings.timeoutDelay);
+            }
         });
-    }
+    };
 
     $(this.init);
 }

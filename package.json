@@ -1,28 +1,28 @@
 {
-    "name": "announce",
-    "version": "0.0.1",
-    "description": "Growl-inspired alerts and messages.",
-    "authors": [
-        "Conor Hughes <hello@conorhughes.me>"
-    ],
-    "scripts": {
-        "build": "gulp build"
-    },
-    "license": "MIT",
-    "main": "dist/js/announce.js",
-    "dependencies": {
-        "jquery": "^1.7.0"
-    },
-    "devDependencies": {
-        "del": "^1.2.0",
-        "gulp": "^3.9.0",
-        "gulp-babel": "^5.1.0",
-        "gulp-bump": "^0.3.1",
-        "gulp-header": "^1.2.2",
-        "gulp-sass": "^2.0.1",
-        "gulp-minify": "^0.0.14",
-        "gulp-clean-css": "^2.0.6",
-        "gulp-rename": "^1.2.2",
-        "gulp-wrap-umd": "^0.2.1"
-    }
+  "name": "announce",
+  "version": "0.0.1",
+  "description": "Growl-inspired alerts and messages.",
+  "authors": [
+    "Conor Hughes <hello@conorhughes.me>"
+  ],
+  "scripts": {
+    "build": "gulp build"
+  },
+  "license": "MIT",
+  "main": "dist/js/announce.js",
+  "dependencies": {
+    "jquery": "^1.7.0"
+  },
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-bump": "^0.3.1",
+    "gulp-header": "^1.2.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-minify": "^0.0.14",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-wrap-umd": "^0.2.1"
+  }
 }

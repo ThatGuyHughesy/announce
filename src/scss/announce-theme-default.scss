@@ -5,28 +5,28 @@ $warning: #E98E56;
 $error: #DE5656;
 
 .announce-theme-default {
-    li {
-        color: $white;
-    }
-    .close {
-        color: $white;
-    }
-    .announce-notice,
-    .announce-success,
-    .announce-warning,
-    .announce-error {
-        border-bottom: 3px solid rgba(0, 0, 0, 0.2);
-    }
-    .announce-notice {
-        background-color: $notice;
-    }
-    .announce-success {
-        background-color: $success;
-    }
-    .announce-warning {
-        background-color: $warning;
-    }
-    .announce-error {
-        background-color: $error;
-    }
+  li {
+    color: $white;
+  }
+  .close {
+    color: $white;
+  }
+  .announce-notice,
+  .announce-success,
+  .announce-warning,
+  .announce-error {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+  }
+  .announce-notice {
+    background-color: $notice;
+  }
+  .announce-success {
+    background-color: $success;
+  }
+  .announce-warning {
+    background-color: $warning;
+  }
+  .announce-error {
+    background-color: $error;
+  }
 }
