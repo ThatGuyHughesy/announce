@@ -13,12 +13,14 @@
 'use strict';
 
 function Announce(settings_global) {
-    var defaults = {
+    var globalDefaults = {
         position: 'bottom-right',
-        theme: 'default'
+        theme: 'default',
+        timeout: false,
+        timeoutDelay: 5000
     };
 
-    var settings = $.extend({}, defaults, settings_global);
+    var settings = $.extend({}, globalDefaults, settings_global);
 
     this.init = function () {
         $('body').append($('<ul/>', {
@@ -28,12 +30,11 @@ function Announce(settings_global) {
     };
 
     this.post = function (settings_message) {
-        var defaults = {
-            type: 'notice',
-            timeout: 5000
+        var postDefaults = {
+            type: 'notice'
         };
 
-        var settings = $.extend({}, defaults, settings_message);
+        var settings = $.extend(globalDefaults, postDefaults, settings_message);
 
         $(function () {
             var announcement = $('<li/>', {
@@ -43,9 +44,11 @@ function Announce(settings_global) {
 
             $('#announce').append(announcement);
 
-            setTimeout(function () {
-                announcement.remove();
-            }, settings.timeout);
+            if (settings.timeout) {
+                setTimeout(function () {
+                    announcement.remove();
+                }, settings.timeoutDelay);
+            }
         });
     };
 

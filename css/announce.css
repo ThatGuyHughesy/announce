@@ -1,5 +1,5 @@
 .announce {
-  height: 100vh;
+  width: 350px;
   font-family: inherit;
   position: fixed;
   z-index: 1000;
@@ -30,19 +30,31 @@
     bottom: 20px;
     left: auto;
     right: 20px; }
-  .announce.top-left, .announce.top-right {
+  .announce.top-center {
+    top: 20px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    margin: auto; }
+  .announce.bottom-center {
+    top: auto;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto; }
+  .announce.top-left, .announce.top-right, .announce.top-center {
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse; }
-    .announce.top-left li, .announce.top-right li {
+    .announce.top-left li, .announce.top-right li, .announce.top-center li {
       margin-bottom: 10px; }
-  .announce.bottom-left, .announce.bottom-right {
+  .announce.bottom-left, .announce.bottom-right, .announce.bottom-center {
     -webkit-flex-direction: column;
     flex-direction: column; }
-    .announce.bottom-left li, .announce.bottom-right li {
+    .announce.bottom-left li, .announce.bottom-right li, .announce.bottom-center li {
       margin-top: 10px; }
   .announce li {
     flex: 0 0 auto;
-    width: 300px;
+    width: 350px;
     padding: 15px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600; }
