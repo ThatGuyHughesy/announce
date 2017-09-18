@@ -1,0 +1,52 @@
+<script src="js/jquery.min.js"></script>
+<script src="js/announce.js"></script>
+<link rel="stylesheet" href="css/announce.css"/>
+<link rel="stylesheet" href="css/announce-theme-default.css"/>
+<style>
+    body {
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+</style>
+<script>
+    var announce = new Announce({
+        position: 'bottom-left',
+        theme: 'default',
+        timeout: false
+    });
+
+    setTimeout(function () {
+        announce.post({
+            message: 'This is a notice announcement.',
+            type: 'notice'
+        });
+    }, 500);
+
+    setTimeout(function () {
+        announce.post({
+            message: 'This is a success announcement.',
+            type: 'success'
+        });
+    }, 1000);
+
+    setTimeout(function () {
+        announce.post({
+            message: 'This is a warning announcement.',
+            type: 'warning'
+        });
+    }, 1500);
+
+    setTimeout(function () {
+        announce.post({
+            message: 'This is a error announcement.',
+            type: 'error'
+        });
+    }, 2000);
+
+    setTimeout(function () {
+        announce.post({
+            message: 'This will timeout in 5 seconds.',
+            type: 'notice',
+            timeout: true
+        });
+    }, 2500);
+</script>
