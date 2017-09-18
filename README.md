@@ -3,31 +3,44 @@
 Growl-inspired alerts and message.
 
 
-## Install
+## Development
 
-__npm__
+__Install Dependencies__
+
+npm
 ```sh
 $ npm install
 ```
 
-__bower__
+bower
 ```sh
 $ bower install
 ```
 
+## Include
+Javascript
+```
+<script src="announce.js"></script>
+```
+
+CSS
+```
+<link rel="stylesheet" href="announce.css"/>
+```
+
 ## Usage
 
-```javascript
-let announce = new Announce({
+``` javascript
+var announce = new Announce({
     position: 'bottom-right',
-    timeout: 5000
+    timeout: true,
+    timeoutDelay: 3000
 });
-
+  
 announce.post({
   text: 'This is an announcement!',
   type: 'notice'
 });
-
 ```
 
 [API documentation](https://thatguyhughesy.github.io/announce/docs)
