@@ -20,12 +20,12 @@ $ bower install
 ## Include
 Javascript
 ```
-<script src="announce.js"></script>
+<script src="announce.min.js"></script>
 ```
 
 CSS
 ```
-<link rel="stylesheet" href="announce.css"/>
+<link rel="stylesheet" href="announce.min.css"/>
 ```
 
 ## Usage
@@ -38,14 +38,18 @@ var announce = new Announce({
 });
   
 announce.post({
-  text: 'This is an announcement!',
+  message: 'This is an announcement!',
   type: 'notice'
+});
+  
+announce.post({
+  message: 'This is a warning!',
+  type: 'warning',
+  dismiss: true
 });
 ```
 
-[API documentation](https://thatguyhughesy.github.io/announce/docs)
-
-[Demo](https://thatguyhughesy.github.io/announce/)
+[Demo and API Documentation](https://thatguyhughesy.github.io/announce/)
 
 
 ## Contributing

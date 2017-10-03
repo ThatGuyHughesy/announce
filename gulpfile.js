@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var babel = require('gulp-babel');
 var bump = require('gulp-bump');
 var header = require('gulp-header');
+var concat = require('gulp-concat');
 var minify = require('gulp-minify');
 var clean = require('gulp-clean-css');
 var rename = require('gulp-rename');
@@ -15,7 +16,7 @@ var pkg = require('./package.json');
 var banner = ['/*!', pkg.name, pkg.version, '*/\n'].join(' ');
 var umdOptions = {
     exports: 'Announce',
-    namespace: 'Announce',
+    namespace: 'Announce'
 };
 
 gulp.task('clean', function () {
@@ -49,23 +50,16 @@ gulp.task('css', function () {
         }))
         .pipe(gulp.dest(distDir + '/css'))
         .pipe(clean())
-        .pipe(rename({suffix: '.min'}))
+        .pipe(concat('announce.min.css'))
         .pipe(gulp.dest(distDir + '/css'));
 
     gulp.src('./src/scss/**/*.scss')
         .pipe(sass({
             includePaths: ['./bower_components']
         }))
-        .pipe(gulp.dest(demoDir + '/css'))
         .pipe(clean())
-        .pipe(rename({suffix: '.min'}))
+        .pipe(concat('announce.min.css'))
         .pipe(gulp.dest(demoDir + '/css'));
-});
-
-gulp.task('css:docs', function () {
-    gulp.src('./docs/welcome/scss/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('./docs/welcome/css'));
 });
 
 var VERSIONS = ['patch', 'minor', 'major'];
@@ -82,7 +76,6 @@ for (var i = 0; i < VERSIONS.length; ++i) {
 gulp.task('watch', ['js', 'css'], function () {
     gulp.watch('./src/js/**/*', ['js']);
     gulp.watch('./src/scss/**/*', ['css']);
-    gulp.watch('./docs/welcome/scss/**/*', ['css']);
 });
 
 gulp.task('build', ['js', 'css']);
