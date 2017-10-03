@@ -9,11 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900" rel="stylesheet">
-    <!-- Announce -->
-    <script src="js/announce.js"></script>
-    <link rel="stylesheet" href="css/announce.css"/>
-    <!-- Announce themes -->
-    <link rel="stylesheet" href="css/announce-theme-default.css"/>
     <!-- Welcome page -->
     <script src="js/jquery.min.js"></script>
     <script src="js/welcome.js"></script>
@@ -79,9 +74,52 @@
 });
 
 announce.post({
-    text: 'This is an announcement!',
+    message: 'This is an announcement!',
     type: 'notice'
+});
+
+announce.post({
+    message: 'This is a warning!',
+    type: 'warning',
+    dismiss: true
 });</code>
+    </pre>
+
+    <h3>
+        <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true">
+            <span aria-hidden="true" class="octicon octicon-link"></span></a>
+        Configuration
+    </h3>
+    <p>Configuration can be both global and post specific, post configuration options override global.</p>
+    <pre>
+        <code>var announce = new Announce({
+    position: 'bottom-right',
+    timeout: true,
+    timeoutDelay: 3000
+});
+
+announce.post({
+    message: 'This will timeout in 3 seconds!',
+    type: 'notice',
+});
+
+announce.post({
+    message: 'This will timeout in 6 seconds not 3!',
+    type: 'notice',
+    timeoutDelay: 6000
+});</code>
+    </pre>
+    <p>Global configuration options:</p>
+    <pre>
+        <code><strong>position:</strong> Where the alerts appear on screen (top-left, bottom-left, top-right, bottom-right, top-center, bottom-center)
+<strong>theme:</strong> Alert styling (default-theme)
+<strong>timeout:</strong> Alert can timeout (boolean)
+<strong>timeoutDelay:</strong> How long the alert stays on screen (1 to 60 seconds)
+<strong>dismiss:</strong> Alert can be dismissed (boolean)</code>
+    </pre>
+    <p>Post configuration options:</p>
+    <pre><code><strong>message:</strong> Text of the alert
+<strong>type:</strong> Alert type (notice, success, warning, danger)</code>
     </pre>
 
     <h3>
