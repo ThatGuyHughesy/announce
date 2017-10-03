@@ -1,7 +1,6 @@
 <script src="js/jquery.min.js"></script>
-<script src="js/announce.js"></script>
-<link rel="stylesheet" href="css/announce.css"/>
-<link rel="stylesheet" href="css/announce-theme-default.css"/>
+<script src="js/announce.min.js"></script>
+<link rel="stylesheet" href="css/announce.min.css"/>
 <style>
     body {
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -10,8 +9,7 @@
 <script>
     var announce = new Announce({
         position: 'bottom-left',
-        theme: 'default',
-        timeout: false
+        theme: 'default'
     });
 
     setTimeout(function () {
@@ -37,7 +35,7 @@
 
     setTimeout(function () {
         announce.post({
-            message: 'This is a error announcement.',
+            message: 'This is an error announcement.',
             type: 'error'
         });
     }, 2000);
@@ -49,4 +47,12 @@
             timeout: true
         });
     }, 2500);
+
+    setTimeout(function () {
+        announce.post({
+            message: 'This is dismissable.',
+            type: 'success',
+            dismiss: true
+        });
+    }, 3000);
 </script>
