@@ -11,7 +11,7 @@
   "license": "MIT",
   "main": "dist/js/announce.js",
   "dependencies": {
-    "jquery": "^1.7.0"
+    "jquery": "^3.0.0"
   },
   "devDependencies": {
     "del": "^1.2.0",
